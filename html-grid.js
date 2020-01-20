@@ -28,7 +28,7 @@ class HtmlGrid {
         cell.classList.toggle('empty-grid-cell');
     }
 
-    // draw function will iterate through each cell in the grid.
+    // Frist. draw function will iterate through each cell in the grid.
     // It will draw a cell for each cell coordinate. If the value
     // of the cell is true, draw a filled cell. If the value of
     // the cell is false, draw an empty cell. 
