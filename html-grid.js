@@ -44,6 +44,10 @@ class HtmlGrid {
                } else {
                    newSpan.classList.toggle('empty-grid-cell');
                }
+
+               // add an event listner to each new span to toggle the cell.
+               newSpan.addEventListener('click', () => this.toggleCell(r, c));
+               
                parentNode.appendChild(newSpan);
            }
 
@@ -52,3 +56,4 @@ class HtmlGrid {
        }
     }
 }
+
