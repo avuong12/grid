@@ -1,0 +1,9 @@
+body {
+    font-family: sans-serif;
+    /* TODO: do you need units for font-size? */
+    font-size: 14; 
+}
+
+div#grid-canvas {
+    user-select: none;
+}

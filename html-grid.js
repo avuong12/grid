@@ -36,7 +36,8 @@ class HtmlGrid {
        for (let r = 0; r < this.grid.rows; r++){
            for (let c = 0; c < this.grid.columns; c++){
                let newSpan = document.createElement('span');
-               // IMPORTANT! This makes each cell acessiable with a unique id. 
+               // IMPORTANT! This makes each cell acessiable with a
+               // unique id. 
                newSpan.id = `${r},${c}`;
                newSpan.classList.toggle('grid-cell');
                if(this.grid.get(r, c)){
@@ -45,8 +46,10 @@ class HtmlGrid {
                    newSpan.classList.toggle('empty-grid-cell');
                }
 
-               // add an event listner to each new span to toggle the cell.
-               newSpan.addEventListener('click', () => this.toggleCell(r, c));
+               // add an event listner to each new span to toggle the
+               // cell.
+               newSpan.addEventListener(
+                   'click', () => this.toggleCell(r, c));
                
                parentNode.appendChild(newSpan);
            }
