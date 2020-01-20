@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    /* TODO: do you need units for font-size? */
+    font-size: 14; 
+}
+
+span.grid-cell {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+span.empty-grid-cell {
+    background: yellow;
+}
+
+span.filled-grid-cell {
+    background: cyan;
+}
