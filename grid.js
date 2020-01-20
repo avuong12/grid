@@ -27,9 +27,9 @@ class Grid {
 
     // fill function will full the entire grid with a value.
     fill(value) {
-        for( let i = 0; i < this.rows; i++){
-            for (let j = 0; j < this.columns; j++){
-                this.set(i, j, value);
+        for (let r = 0; r < this.rows; r++){
+            for (let c = 0; c < this.columns; c++){
+                this.set(r, c, value);
             }
         }
     }
