@@ -6,6 +6,7 @@
 class HtmlGrid {
     constructor(rows, columns) {
         this.grid = new Grid(rows, columns, false);
+        this.dragging = false;
     }
 
     // Toggle the color of the cell at the input row and column.
@@ -46,11 +47,31 @@ class HtmlGrid {
                    newSpan.classList.toggle('empty-grid-cell');
                }
 
-               // add an event listner to each new span to toggle the
-               // cell.
-               newSpan.addEventListener(
-                   'click', () => this.toggleCell(r, c));
-               
+                // add an event listner to each new span to toggle the
+                // cell when the mouse is pressed down on the cell.
+                newSpan.addEventListener(
+                    'mousedown', () => {
+                        this.toggleCell(r, c);
+                        this.dragging = true;
+                    });
+                
+                // add an event listner to each new span to toggle the
+                // cell when the mouse enter the cell for the first time. 
+                newSpan.addEventListener(
+                    'mouseenter', () => {
+                        if(this.dragging){
+                            this.toggleCell(r, c);
+                        }
+                    });
+                
+                // add an event listner to each new span to toggle the 
+                // cell with mouseenter and stopping the dragging by setting
+                // dragging to false.
+                newSpan.addEventListener(
+                    'mouseup', () => {
+                        this.dragging = false;
+                    });
+                    
                parentNode.appendChild(newSpan);
            }
 
